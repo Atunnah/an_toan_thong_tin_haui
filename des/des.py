@@ -1,8 +1,3 @@
-# Python3 code for the above approach
-
-# Hexadecimal to binary conversion
-
-
 def hex2bin(s):
 	mp = {'0': "0000",
 		'1': "0001",
@@ -245,8 +240,8 @@ def encrypt(pt, rkb, rk):
 	return cipher_text
 
 
-pt = "123456ABCD132536"
-key = "AABB09182736CCDD"
+pt = "0123456789ABCDEF"
+key = "133457799BBCDFF1"
 
 # Key generation
 # --hex to binary
@@ -300,6 +295,9 @@ for i in range(0, 16):
 
 	rkb.append(round_key)
 	rk.append(bin2hex(round_key))
+
+print(rkb)
+print(rk)
 
 print("Encryption")
 cipher_text = bin2hex(encrypt(pt, rkb, rk))

@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/An toàn và bảo mật thông tin",
-      "program": "d:/An toàn và bảo mật thông tin/build/Debug/outDebug",
+      "cwd": "d:/An toan va bao mat thong tin",
+      "program": "d:/An toan va bao mat thong tin/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
