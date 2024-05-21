@@ -1,9 +1,9 @@
 import math as m
 import random
 
-prime = []
 N_MAX = 10000001
 p, a, x, k, K, C1, C2 = None, None, None, None, None, None, None
+prime = []
 
 def sleve():
     global prime
@@ -22,33 +22,33 @@ def randomPrime():
     return prime[random.randint(2, len(prime) - 1)]
 
 def randomNumber():
-    return random.randint(1, 200)
+    return random.randint(1, 2000)
 
 def mod(a, b, c):
-    decimal2binary = bin(b)[2:]
+    decimal2binary = bin(b)[2:]      
     f = 1
     for i in decimal2binary:
-        f = f * f % c
+        f = (f * f) % c
         if i == '1':
             f = (f * a) % c
     return f
 
-def inverseMode(a, b):
+def inverseMod(a, b):
     for i in range(1, b):
-        if ((a % b) * (i % b)) % b == 1:
+        if((a % b) * (i % b)) % b == 1:
             return i
         
-def public_key():
-    global a, p, x, y, k, K, C1, C2
+def key():
+    global p, a, x, y, k
     p = randomPrime()
     a = randomNumber()
-    x = randomNumber()
+    x  = randomNumber()
     y = mod(a, x, p)
     k = random.randint(1, p - 1)
-    K = mod(y, k, p)
 
 def encrypt(m):
-    global a, p, x, y, k, K, C1, C2
+    global p, a, x, y, k, K, C1, C2
+    K = mod(y, k, p)
     C1 = mod(a, k, p)
     C2 = (K * m) % p
     return [C1, C2]
@@ -60,21 +60,21 @@ def encryptString(m):
     return encode
 
 def decrypt(c):
-    global a, p, x, y, k, K, C1, C2
+    global p, a, x, y, K, C1, C2
     C1, C2 = c
     K = mod(C1, x, p)
-    M = (inverseMode(K, p) * (C2 % p)) % p
+    M = (inverseMod(K, p) * (C2 % p)) % p
     return M
 
-def decryptString(encode):
+def decryptString(c):
     text = ''
-    for i in encode:
+    for i in c:
         text += chr(decrypt(i))
     return text
 
 sleve()
-public_key()
-m = input("Enter string: ")
+key()
+m = input("Enter message: ")
 encode = encryptString(m)
-print("Encrypted code: ", encode)
-print("Decrypt text: ", decryptString(encode))
+print("Encrypted Code: ", encode)
+print("Decrypted Message: ", decryptString(encode))

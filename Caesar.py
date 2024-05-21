@@ -36,24 +36,19 @@ def create_vietnamese_alphabet():
     return vietnamese_alphabet
 
 def caesar_cipher(text, shift):
+    va = create_vietnamese_alphabet()
     result = ''
-    vietnamese_alphabet = create_vietnamese_alphabet()
     for char in text:
-        if char in vietnamese_alphabet:
-            shifted_char = vietnamese_alphabet[char]
-            idx = (list(vietnamese_alphabet.keys())).index(char)
-            new_idx = (idx + shift) % len(vietnamese_alphabet)
-            result += (list(vietnamese_alphabet.keys()))[new_idx]
+        if char in va:
+            idx = (list(va.keys())).index(char)
+            new_idx = (idx + shift) % len(va)
+            result += (list(va.keys()))[new_idx]
         else:
             result += char
     return result
 
-# Ví dụ mã hóa văn bản Tiếng Việt 'Xin chào, Việt Nam!' với độ dịch là 3
-text = input('Nhập vào đoạn cần mã hóa: ')
-cnt = int(input('Số dịch: '))
-encrypted_text = caesar_cipher(text, cnt)
-print("Mã hóa:", encrypted_text)
-
-# Ví dụ giải mã văn bản đã mã hóa trở lại
-decrypted_text = caesar_cipher(encrypted_text, -cnt)
-print("Giải mã:", decrypted_text)
+m = input("Enter message: ")
+s = int(input("Enter shift: "))
+enc = caesar_cipher(m, s)
+print("Encrypted message: ", enc)
+print("Decrypted message: ", caesar_cipher(enc, -s))

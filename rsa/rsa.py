@@ -1,32 +1,33 @@
 import math as m
 import random
 
+N_Max = 1000
 prime = []
-N_MAX = 1000
 p, q, n, fi, e, d = None, None, None, None, None, None
 
 def sleve():
-    nt = [True] * N_MAX
+    nt = [True] * N_Max
     nt[0] = nt[1] = False
-    for i in range(2, m.isqrt(N_MAX) + 1) :
+    for i in range(2, m.isqrt(N_Max) + 1):
         if nt[i]:
-            for j in range(i * i, N_MAX, i):
+            for j in range(i * i, N_Max, i):
                 nt[j] = False
-    for i in range(2, N_MAX):
+    for i in range(2, N_Max):
         if nt[i]:
             prime.append(i)
 
+def gcd(a, b):
+    if b == 0:
+        return a
+    else:
+        return gcd(b, a % b)            
+
 def randomPrime():
-    k = prime[random.randint(2, len(prime) - 1)]     
+    global prime
+    k = prime[random.randint(2, len(prime) - 1)]            
     prime.remove(k)
     return k
 
-def gcd(a, b):
-    if b == 0: 
-        return a
-    else:
-        return gcd(b, a % b)
-    
 def mod(a, b, c):
     decimal2binary = bin(b)[2:]
     f = 1
@@ -36,9 +37,9 @@ def mod(a, b, c):
             f = (f * a) % c
     return f
 
-def inverseMod(a, b):
+def inverseMode(a, b):
     for i in range(1, b):
-        if ((a % b) * (i % b)) % b == 1:
+        if((a % b) * (i % b)) % b == 1:
             return i
         
 def key():
@@ -51,34 +52,31 @@ def key():
         if gcd(i, fi) == 1:
             e = i
             break
-    d = inverseMod(e, fi)
+    d = inverseMode(e, fi)
 
 def encrypt(m):
-    global e, n
-    c = mod(m, e, n)
-    return c
+    global n, e
+    return mod(m, e, n)
 
-def encyptString(m):
+def encryptString(m):
     encode = []
     for i in m:
         encode.append(encrypt(ord(i)))
     return encode
 
 def decrypt(c):
-    global d, n
-    m = mod(c, d, n)
-    return m
+    global n, d
+    return mod(c, d, n)
 
-def decyptString(encode):
-    text = ""
-    for i in encode:
+def decryptString(c):
+    text = ''
+    for i in c:
         text += chr(decrypt(i))
     return text
 
 sleve()
 key()
-m = input("Enter text: ")
-encode = encyptString(m)
-print("Encrypt code: ", encode)
-print("Decrypt text: ", decyptString(encode))
-
+m = input("Enter message: ")
+encode = encryptString(m)
+print("Encrypted code: ", encode)
+print("Decrypted message: ", decryptString(encode))

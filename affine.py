@@ -39,12 +39,11 @@ def create_vietnamese_alphabet():
     }
     return vietnamese_alphabet
 
-
-def gcd(x, y):
-    if y == 0:
-        return x
+def gcd(a, b):
+    if b == 0:
+        return a
     else:
-        return gcd(y, x % y)
+        return gcd(b, a % b)
     
 def inverseMod(a, b):
     for i in range(1, b):
@@ -54,35 +53,31 @@ def inverseMod(a, b):
 def encrypt(m, a, b):
     encode = ''
     va = create_vietnamese_alphabet()
-    for x in m:
-        if x in va:
-            idx = (list(va.keys())).index(x)
-            new_idx = (a * idx + b) % len(va)
-            encode += (list(va.keys()))[new_idx]
+    for char in m:
+        if char in va:
+            x = (list(va.keys())).index(char)
+            e = (a * x + b) % len(va)
+            encode += (list(va.keys()))[e]
         else:
-            encode += x
+            encode += char
     return encode
 
 def decrypt(c, a, b):
     text = ''
     va = create_vietnamese_alphabet()
-    for x in c:
-        if x in va:
-            idx = (list(va.keys())).index(x)
-            new_idx = ((inverseMod(a, len(va)) * (idx - b) % len(va)))
-            text += (list(va.keys()))[new_idx]
+    for char in c:
+        if char in va:
+            y = (list(va.keys())).index(char)
+            d = (inverseMod(a, len(va)) * (y - b) % len(va))
+            text += (list(va.keys()))[d]
         else:
-            text += x
+            text += char
     return text
 
 m = input("Enter message: ")
-va = create_vietnamese_alphabet()
-for i in range(N_MAX):
-    if gcd(i, len(va)) == 1:
-        a = i
-        break
+a = 5
 b = random.randint(1, N_MAX)
 encode = encrypt(m, a, b)
 print("Encrypted message: ", encode)
-print("Decrypted message: ", decrypt(encode, a, b))
+print("Decrypted message: ", decrypt(encode, a ,b))
         
