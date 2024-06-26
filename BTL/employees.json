@@ -1,0 +1,152 @@
+[
+    {
+        "emp_id": "EMP001",
+        "name": "Nguyễn Thị Kim Anh",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    },
+    {
+        "emp_id": "EMP002",
+        "name": "Nguyễn Tuấn Anh",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    },
+    {
+        "emp_id": "EMP003",
+        "name": "Trần Quốc Anh",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    },
+    {
+        "emp_id": "EMP004",
+        "name": "Trần Văn Bằng",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    },
+    {
+        "emp_id": "EMP005",
+        "name": "Phạm Thành Đông",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    },
+    {
+        "emp_id": "EMP006",
+        "name": "Nguyễn Sơn Hà",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    },
+    {
+        "emp_id": "EMP007",
+        "name": "Vũ Lê Minh Hiếu",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    },
+    {
+        "emp_id": "EMP008",
+        "name": "Đinh Huy Hoàng",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    },
+    {
+        "emp_id": "EMP009",
+        "name": "Ngô Thị Tú Khuyên",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    },
+    {
+        "emp_id": "EMP010",
+        "name": "Nguyễn Đức Kiên",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    },
+    {
+        "emp_id": "EMP011",
+        "name": "Nguyễn Hữu Kiên",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    },
+    {
+        "emp_id": "EMP012",
+        "name": "Vũ Thanh Lâm",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    },
+    {
+        "emp_id": "EMP013",
+        "name": "Nguyễn Ngọc Minh",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    },
+    {
+        "emp_id": "EMP014",
+        "name": "Nguyễn Thị Na",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    },
+    {
+        "emp_id": "EMP015",
+        "name": "Đồng Bình Nam",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    },
+    {
+        "emp_id": "EMP016",
+        "name": "Nguyễn Quốc Phú",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    },
+    {
+        "emp_id": "EMP017",
+        "name": "Nguyễn Minh Quang",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    },
+    {
+        "emp_id": "EMP018",
+        "name": "Đèo Văn Thắng",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    },
+    {
+        "emp_id": "EMP019",
+        "name": "Hà Đức Thắng",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    },
+    {
+        "emp_id": "EMP020",
+        "name": "Ngô văn Trung",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    },
+    {
+        "emp_id": "EMP021",
+        "name": "Phạm Văn Trung",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    },
+    {
+        "emp_id": "EMP022",
+        "name": "Nguyễn Đình Trường",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    },
+    {
+        "emp_id": "EMP023",
+        "name": "Trần Phạm Tuân",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    },
+    {
+        "emp_id": "EMP024",
+        "name": "Lầu Minh Tuấn",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    },
+    {
+        "emp_id": "EMP025",
+        "name": "Nguyễn Trường Tùng",
+        "position": "Nhân viên",
+        "salary": "1000000"
+    }
+]
